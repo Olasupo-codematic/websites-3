@@ -1,4 +1,4 @@
-// --- Product Data Payload (Using Placeholder image URLs) ---
+// --- Product Data Payload (Using Icons) ---
 const products = [
     {
         "name": "Social Media Growth Blueprint",
@@ -9,9 +9,7 @@ const products = [
         "price_ngn": "3,200.00",
         "price_kes": "540.00",
         "default_currency": "kes",
-        "image_urls": [
-            "https://placehold.co/400x300/2563eb/ffffff?text=Social+Blueprint"
-        ],
+        "icon": "📱",
         "site_id": "subcol"
     },
     {
@@ -23,9 +21,7 @@ const products = [
         "price_ngn": "3,800.00",
         "price_kes": "645.00",
         "default_currency": "kes",
-        "image_urls": [
-            "https://placehold.co/400x300/1e293b/ffffff?text=SEO+Guide"
-        ],
+        "icon": "🔍",
         "site_id": "subcol"
     },
     {
@@ -37,9 +33,7 @@ const products = [
         "price_ngn": "2,900.00",
         "price_kes": "450.00",
         "default_currency": "kes",
-        "image_urls": [
-            "https://placehold.co/400x300/facc15/1e293b?text=Email+Kit"
-        ],
+        "icon": "📧",
         "site_id": "subcol"
     },
     {
@@ -51,9 +45,7 @@ const products = [
         "price_ngn": "4,500.00",
         "price_kes": "775.00",
         "default_currency": "kes",
-        "image_urls": [
-            "https://placehold.co/400x300/059669/ffffff?text=Content+Marketing"
-        ],
+        "icon": "📝",
         "site_id": "subcol"
     },
     {
@@ -65,9 +57,7 @@ const products = [
         "price_ngn": "5,100.00",
         "price_kes": "875.00",
         "default_currency": "kes",
-        "image_urls": [
-            "https://placehold.co/400x300/7c3aed/ffffff?text=Affiliate+System"
-        ],
+        "icon": "💰",
         "site_id": "subcol"
     }
 ];
@@ -87,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const price = product.default_currency === 'kes' ? product.price_kes : (product.default_currency === 'zk' ? product.price_zk : product.price_usd);
 
             card.innerHTML = `
-                <div class="product-image-wrapper">
-                    <img src="${product.image_urls[0]}" alt="${product.name}" class="product-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/cccccc/333333?text=Product+Image';" style="width:100%; height:auto; border-radius: 0.5rem; margin-bottom: 1rem;">
+                <div class="product-icon-wrapper" style="display: flex; justify-content: center; align-items: center; height: 150px; background: linear-gradient(135deg, var(--color-primary) 0%, #1e40af 100%); border-radius: 0.75rem; margin-bottom: 1.5rem; font-size: 5rem;">
+                    ${product.icon}
                 </div>
                 <h3 style="color:var(--color-primary);">${product.name}</h3>
                 <p>${product.description}</p>
