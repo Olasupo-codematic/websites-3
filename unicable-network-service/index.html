@@ -490,17 +490,17 @@
         </div>
     </footer>
 
-    <!-- Download Modal -->
+    <!-- Purchase Modal -->
     <div class="modal" id="downloadModal">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
-            <h2>Download Your Ebook</h2>
-            <p>Thank you for your interest in our ebook! Please complete your purchase to download.</p>
+            <h2>Purchase Your Ebook</h2>
+            <p>Thank you for your interest in our ebook! Please enter your email to complete your purchase.</p>
             <div class="form-group">
                 <label for="email-download">Email Address</label>
                 <input type="email" id="email-download" class="form-control" placeholder="Enter your email">
             </div>
-            <button class="btn" id="confirmDownload">Confirm Download</button>
+            <button class="btn" id="confirmDownload">Complete Purchase</button>
         </div>
     </div>
 
@@ -525,10 +525,7 @@
                 price_ghc: "230.00",
                 price_ngn: "2,000.00",
                 default_currency: "kes",
-                image_urls: [
-                    "https://ik.imagekit.io/novalabsai/product1a.jpg",
-                    "https://ik.imagekit.io/novalabsai/product1b.jpg"
-                ],
+                icon: "🌐",
                 site_id: "unicable"
             },
             {
@@ -539,10 +536,7 @@
                 price_ghc: "280.00",
                 price_ngn: "2,500.00",
                 default_currency: "kes",
-                image_urls: [
-                    "https://ik.imagekit.io/novalabsai/product2a.jpg",
-                    "https://ik.imagekit.io/novalabsai/product2b.jpg"
-                ],
+                icon: "🔒",
                 site_id: "unicable"
             },
             {
@@ -553,10 +547,7 @@
                 price_ghc: "250.00",
                 price_ngn: "2,200.00",
                 default_currency: "kes",
-                image_urls: [
-                    "https://ik.imagekit.io/novalabsai/product3a.jpg",
-                    "https://ik.imagekit.io/novalabsai/product3b.jpg"
-                ],
+                icon: "📶",
                 site_id: "unicable"
             },
             {
@@ -567,10 +558,7 @@
                 price_ghc: "300.00",
                 price_ngn: "2,700.00",
                 default_currency: "kes",
-                image_urls: [
-                    "https://ik.imagekit.io/novalabsai/product4a.jpg",
-                    "https://ik.imagekit.io/novalabsai/product4b.jpg"
-                ],
+                icon: "🏢",
                 site_id: "unicable"
             },
             {
@@ -581,10 +569,7 @@
                 price_ghc: "240.00",
                 price_ngn: "2,100.00",
                 default_currency: "kes",
-                image_urls: [
-                    "https://ik.imagekit.io/novalabsai/product5a.jpg",
-                    "https://ik.imagekit.io/novalabsai/product5b.jpg"
-                ],
+                icon: "🔧",
                 site_id: "unicable"
             }
         ];
@@ -618,14 +603,14 @@
                 productCard.className = 'product-card fade-in';
 
                 productCard.innerHTML = `
-                    <div class="product-image">
-                        <span>${product.name}</span>
+                    <div class="product-image" style="background: linear-gradient(135deg, var(--primary-color) 0%, #374151 100%); color: white; font-size: 4rem; display: flex; align-items: center; justify-content: center;">
+                        ${product.icon}
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">${product.name}</h3>
                         <p class="product-description">${product.description}</p>
                         <div class="product-price">KES ${product.price_kes}</div>
-                        <button class="btn download-btn" data-product="${product.name}">Download Now</button>
+                        <button class="btn download-btn" data-product="${product.name}">Buy Now</button>
                     </div>
                 `;
 
@@ -657,7 +642,7 @@
                 navLinks.classList.toggle('active');
             });
 
-            // Download buttons
+            // Buy buttons
             document.addEventListener('click', (e) => {
                 if (e.target.classList.contains('download-btn')) {
                     const productName = e.target.getAttribute('data-product');
@@ -672,11 +657,11 @@
 
             document.getElementById('closeSuccess').addEventListener('click', closeModals);
 
-            // Confirm download
+            // Confirm purchase
             document.getElementById('confirmDownload').addEventListener('click', () => {
                 const email = document.getElementById('email-download').value;
                 if (validateEmail(email)) {
-                    alert('Thank you for your purchase! A download link has been sent to your email.');
+                    alert('Thank you for your purchase! Your ebook and download instructions have been sent to your email.');
                     closeModals();
                 } else {
                     alert('Please enter a valid email address.');
@@ -707,7 +692,7 @@
         // Open download modal
         function openDownloadModal(productName) {
             const modalTitle = downloadModal.querySelector('h2');
-            modalTitle.textContent = `Download ${productName}`;
+            modalTitle.textContent = `Purchase ${productName}`;
             downloadModal.style.display = 'flex';
         }
 

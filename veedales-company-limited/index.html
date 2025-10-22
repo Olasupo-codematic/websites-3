@@ -478,8 +478,6 @@
             <a href="#home" class="logo" onclick="showPage('homepage')">VEEDALES</a>
             <nav class="nav-links">
                 <a href="#home" onclick="showPage('homepage')">Home</a>
-                <!-- The CTA button is now in the nav for easy access -->
-                <button class="btn btn-primary" id="open-quote-modal">Buy Now</button>
             </nav>
         </div>
     </header>
@@ -495,7 +493,6 @@
                 <div class="container">
                     <h1 class="text-accent">Words that Sell. Stories that Stick.</h1>
                     <p>We craft high-converting copy for businesses, brands, and creators.</p>
-                    <a href="#" class="btn btn-primary" id="hero-quote-btn">Buy Now</a>
                 </div>
             </section>
 
@@ -594,30 +591,7 @@
         </div>
     </footer>
 
-    <!-- Quote Modal (JavaScript Controlled) -->
-    <div id="quote-modal" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" id="close-quote-modal">&times;</button>
-            <h2 class="modal-title">Purchase Our Services</h2>
-            <form id="modal-form">
-                <div class="form-group">
-                    <label for="modal-name">Name</label>
-                    <input type="text" id="modal-name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="modal-email">Email</label>
-                    <input type="email" id="modal-email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="modal-service">Required Service</label>
-                    <textarea id="modal-service" name="service" required
-                        placeholder="E.g., 5,000-word SEO Blog Post or Email Sequence for 500 leads."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Purchase Now</button>
-                <div id="modal-message" class="form-message"></div>
-            </form>
-        </div>
-    </div>
+
 
     <!-- JavaScript Logic -->
     <script>
@@ -627,14 +601,7 @@
         const homepage = document.getElementById('homepage');
         const allPages = document.querySelectorAll('.page-content');
 
-        const quoteModal = document.getElementById('quote-modal');
-        const openModalButtons = [
-            document.getElementById('open-quote-modal'),
-            document.getElementById('hero-quote-btn')
-        ];
-        const closeModalButton = document.getElementById('close-quote-modal');
         const contactForm = document.getElementById('contact-form');
-        const modalForm = document.getElementById('modal-form');
         const serviceBuyButtons = document.querySelectorAll('.service-buy-btn');
 
         // --- 1. Page Navigation Simulation ---
@@ -661,42 +628,7 @@
             showPage('homepage');
         });
 
-        // --- 2. Modal Popup Logic ---
 
-        function toggleModal(open = null) {
-            if (open === true) {
-                quoteModal.classList.add('is-open');
-            } else if (open === false) {
-                quoteModal.classList.remove('is-open');
-            } else {
-                // Toggle state
-                quoteModal.classList.toggle('is-open');
-            }
-        }
-
-        openModalButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                toggleModal(true);
-            });
-        });
-
-        // Add event listeners for service buy buttons
-        serviceBuyButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                toggleModal(true);
-            });
-        });
-
-        closeModalButton.addEventListener('click', () => toggleModal(false));
-
-        // Close modal when clicking outside the content
-        quoteModal.addEventListener('click', (e) => {
-            if (e.target.id === 'quote-modal') {
-                toggleModal(false);
-            }
-        });
 
 
         // --- 3. Form Validation and Submission (Placeholder) ---
@@ -733,11 +665,7 @@
                 messageElement.style.display = 'block';
                 form.reset();
 
-                // If it's the modal form, close the modal after success
-                if (form.id === 'modal-form') {
-                    // Wait a moment for the user to read the success message
-                    setTimeout(() => toggleModal(false), 2000);
-                }
+
             }, 500);
         }
 
@@ -745,9 +673,25 @@
             handleFormSubmission(e, contactForm, document.getElementById('contact-message'));
         });
 
-        modalForm.addEventListener('submit', (e) => {
-            handleFormSubmission(e, modalForm, document.getElementById('modal-message'));
+        // --- Buy Now Button Functionality ---
+        serviceBuyButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const serviceCard = btn.closest('.service-card');
+                const serviceName = serviceCard.querySelector('h3').textContent;
+                const servicePrice = serviceCard.querySelector('.price').textContent;
+                
+                // Create mailto link for purchase inquiry
+                const subject = encodeURIComponent(`Purchase Inquiry: ${serviceName}`);
+                const body = encodeURIComponent(`Hello,\n\nI would like to purchase the following service:\n\nService: ${serviceName}\nPrice: ${servicePrice}\n\nPlease provide me with the payment details and next steps.\n\nThank you!`);
+                const mailtoLink = `mailto:Support@veedalescomp.com?subject=${subject}&body=${body}`;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+            });
         });
+
+
 
 
         // --- 4. Scroll Animations (Fade-in) ---

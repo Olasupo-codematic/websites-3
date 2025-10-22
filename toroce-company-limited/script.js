@@ -12,6 +12,7 @@ const digitalProducts = [
         "price_usd": "5.50",
         "price_ksh": "710.00",
         "default_currency": "KSH",
+        "icon": "📱",
         "site_id": "toroce-company-limited"
     },
     {
@@ -20,6 +21,7 @@ const digitalProducts = [
         "price_usd": "6.80",
         "price_ksh": "875.00",
         "default_currency": "KSH",
+        "icon": "🎯",
         "site_id": "toroce-company-limited"
     },
     {
@@ -28,6 +30,7 @@ const digitalProducts = [
         "price_usd": "4.80",
         "price_ksh": "620.00",
         "default_currency": "KSH",
+        "icon": "📅",
         "site_id": "toroce-company-limited"
     },
     {
@@ -36,6 +39,7 @@ const digitalProducts = [
         "price_usd": "7.80",
         "price_ksh": "1,005.00",
         "default_currency": "KSH",
+        "icon": "⭐",
         "site_id": "toroce-company-limited"
     }
 ];
@@ -52,15 +56,14 @@ function renderProducts() {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
 
-        // NOTE: Using a simple placeholder as external image URLs are not supported in this environment.
-        const imagePlaceholder = `
-            <div class="product-image-placeholder">
-                DIGITAL ASSET
+        const iconContainer = `
+            <div class="product-icon-container" style="display: flex; justify-content: center; align-items: center; height: 150px; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); border-radius: 0.75rem; margin-bottom: 1.5rem; font-size: 5rem;">
+                ${product.icon}
             </div>
         `;
 
         const html = `
-            ${imagePlaceholder}
+            ${iconContainer}
             <div class="product-content">
                 <h4>${product.name}</h4>
                 <p>${product.description}</p>

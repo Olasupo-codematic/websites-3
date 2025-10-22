@@ -12,9 +12,7 @@ const DIGITAL_PRODUCTS = [
     "price_ghc": "68.00",
     "price_ngn": "3,900.00",
     "default_currency": "zk",
-    "image_urls": [
-      "https://placehold.co/300x150/1f2937/f59e0b?text=Playbook+Cover"
-    ],
+    "icon": "📖",
     "site_id": "tayo-services-limited"
   },
   {
@@ -25,9 +23,7 @@ const DIGITAL_PRODUCTS = [
     "price_ghc": "90.00",
     "price_ngn": "5,000.00",
     "default_currency": "zk",
-    "image_urls": [
-      "https://placehold.co/300x150/1f2937/f59e0b?text=Strategy+Bundle"
-    ],
+    "icon": "📊",
     "site_id": "tayo-services-limited"
   },
   {
@@ -38,9 +34,7 @@ const DIGITAL_PRODUCTS = [
     "price_ghc": "60.00",
     "price_ngn": "3,500.00",
     "default_currency": "zk",
-    "image_urls": [
-      "https://placehold.co/300x150/1f2937/f59e0b?text=SEO+Ebook"
-    ],
+    "icon": "🔍",
     "site_id": "tayo-services-limited"
   },
   {
@@ -51,9 +45,7 @@ const DIGITAL_PRODUCTS = [
     "price_ghc": "115.00",
     "price_ngn": "6,200.00",
     "default_currency": "zk",
-    "image_urls": [
-      "https://placehold.co/300x150/1f2937/f59e0b?text=Starter+Kit"
-    ],
+    "icon": "✍️",
     "site_id": "tayo-services-limited"
   }
 ];
@@ -77,16 +69,17 @@ function loadDigitalProducts() {
     DIGITAL_PRODUCTS.forEach(product => {
         // Since the company is based in Kenya (KES), we display the 'zk' placeholder price as KES.
         const priceDisplay = `KES ${parseFloat(product.price_zk).toFixed(2)}`;
-        const imageUrl = product.image_urls[0]; // Use the first image URL
 
         const card = document.createElement('div');
         card.className = 'card product-card';
         card.innerHTML = `
-            <img src="${imageUrl}" alt="${product.name} Cover" onerror="this.onerror=null;this.src='https://placehold.co/300x150/1f2937/f9fafb?text=TAYO+Product';" loading="lazy">
+            <div class="product-icon-container" style="display: flex; justify-content: center; align-items: center; height: 150px; background: linear-gradient(135deg, #1f2937 0%, #374151 100%); border-radius: 0.75rem; margin-bottom: 1.5rem; font-size: 5rem;">
+                ${product.icon}
+            </div>
             <h3>${product.name}</h3>
             <p>${product.description}</p>
             <div class="price">${priceDisplay}</div>
-            <a href="#" class="btn btn-primary" style="margin-top: auto;">Download Now</a>
+            <a href="#" class="btn btn-primary" style="margin-top: auto;">Buy Now</a>
         `;
         container.appendChild(card);
     });

@@ -650,9 +650,7 @@
                 "price_ghc": "82.00",
                 "price_ngn": "4,800.00",
                 "default_currency": "zk",
-                "image_urls": [
-                    "https://placehold.co/400x250/0f172a/facc15?text=Media+Strategy"
-                ],
+                "icon": "📺",
                 "site_id": "timushe-company-limited"
             },
             {
@@ -663,9 +661,7 @@
                 "price_ghc": "90.00",
                 "price_ngn": "5,200.00",
                 "default_currency": "zk",
-                "image_urls": [
-                    "https://placehold.co/400x250/0f172a/facc15?text=Thought+Leader+Ebook"
-                ],
+                "icon": "🎯",
                 "site_id": "timushe-company-limited"
             },
             {
@@ -676,9 +672,7 @@
                 "price_ghc": "115.00",
                 "price_ngn": "6,500.00",
                 "default_currency": "zk",
-                "image_urls": [
-                    "https://placehold.co/400x250/0f172a/facc15?text=Authors+Toolkit"
-                ],
+                "icon": "✍️",
                 "site_id": "timushe-company-limited"
             },
             {
@@ -689,9 +683,7 @@
                 "price_ghc": "68.00",
                 "price_ngn": "3,900.00",
                 "default_currency": "zk",
-                "image_urls": [
-                    "https://placehold.co/400x250/0f172a/facc15?text=Proposal+Pack"
-                ],
+                "icon": "📋",
                 "site_id": "timushe-company-limited"
             }
         ];
@@ -713,11 +705,10 @@
                 const card = document.createElement('div');
                 card.classList.add('product-card');
 
-                // Using the first image URL and a placeholder fallback
-                const imageUrl = product.image_urls[0] || "https://placehold.co/400x250/0f172a/facc15?text=Image+Unavailable";
-
                 card.innerHTML = `
-                    <img src="${imageUrl}" alt="${product.name}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0f172a/facc15?text=Image+Fallback';">
+                    <div class="product-icon-container" style="display: flex; justify-content: center; align-items: center; height: 250px; background: linear-gradient(135deg, var(--color-primary) 0%, #374151 100%); border-radius: var(--border-radius); margin-bottom: 1.5rem; font-size: 6rem;">
+                        ${product.icon}
+                    </div>
                     <h4>${product.name}</h4>
                     <p>${product.description}</p>
                     <div class="price-display">Starting from ${getPrice(product)}</div>
