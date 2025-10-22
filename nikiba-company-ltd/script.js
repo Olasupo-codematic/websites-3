@@ -17,25 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
           "name": "Digital Entrepreneurship Guide",
           "description": "A practical step-by-step ebook on launching and scaling an online business in Africa.",
           "price_kes": "6,500.00",
-          "image_urls": ["https://i.imgur.com/Jp4w3zO.png"],
+          "icon": "💼",
         },
         {
           "name": "Smart Marketing Blueprint",
           "description": "An ebook package covering digital marketing, SEO, and sales strategies for small businesses.",
           "price_kes": "7,800.00",
-          "image_urls": ["https://i.imgur.com/VF4oV2y.png"],
+          "icon": "📊",
         },
         {
           "name": "Personal Development Masterpack",
           "description": "A collection of ebooks on discipline, mindset, productivity, and goal setting.",
           "price_kes": "5,000.00",
-          "image_urls": ["https://i.imgur.com/Jp4w3zO.png"],
+          "icon": "🧠",
         },
         {
           "name": "Financial Freedom Essentials",
           "description": "Learn how to build wealth, manage personal finance, and invest wisely with this comprehensive guide.",
           "price_kes": "9,500.00",
-          "image_urls": ["https://i.imgur.com/VF4oV2y.png"],
+          "icon": "💰",
         }
     ];
 
@@ -50,12 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'ebook-card';
 
-            // Use the first image URL and add an error fallback for resilience
-            const imageUrl = product.image_urls[0];
-
             card.innerHTML = `
-                <img src="${imageUrl}" alt="${product.name} Ebook Cover" class="ebook-card-image"
-                     onerror="this.onerror=null;this.src='https://placehold.co/150x200/0D47A1/FFFFFF?text=NIKIBA';">
+                <div class="ebook-icon-container" style="display: flex; justify-content: center; align-items: center; height: 200px; background: linear-gradient(135deg, #0D47A1 0%, #1565C0 100%); border-radius: 0.75rem; margin-bottom: 1.5rem; font-size: 6rem;">
+                    ${product.icon}
+                </div>
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
                 <div class="ebook-card-price">${primaryCurrencySymbol} ${product.price_kes}</div>
