@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNICABLE NETWORK SERVICES LIMITED - Ebook Packages on Networking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1F2937;
+            --accent-color: #10B981;
+            --background-color: #F9FAFB;
+            --text-color: #111827;
+            --light-gray: #E5E7EB;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #374151 100%);
+            color: var(--white);
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.25rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Products Section */
+        .products {
+            background-color: var(--background-color);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .product-image {
+            height: 200px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            margin-bottom: 1rem;
+            color: #6B7280;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--white);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-left: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                margin-top: 1.5rem;
+            }
+
+            .footer-links li {
+                margin: 0 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">UNICABLE NETWORK SERVICES</a>
+                <button class="mobile-menu-btn">☰</button>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Master Networking. Learn Digitally.</h1>
+            <p>Curated ebook packages to enhance your networking skills and knowledge.</p>
+            <a href="#products" class="btn">Browse Ebooks</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p>UNICABLE NETWORK SERVICES LIMITED delivers comprehensive networking guides and ebooks to help
+                    learners and professionals stay ahead in IT infrastructure, network security, and communications
+                    technology.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Networking Ebook Packages</h2>
+            <div class="products-grid">
+                <!-- Product cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 UNICABLE NETWORK SERVICES LIMITED</p>
+                <ul class="footer-links">
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Download Modal -->
+    <div class="modal" id="downloadModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2>Download Your Ebook</h2>
+            <p>Thank you for your interest in our ebook! Please complete your purchase to download.</p>
+            <div class="form-group">
+                <label for="email-download">Email Address</label>
+                <input type="email" id="email-download" class="form-control" placeholder="Enter your email">
+            </div>
+            <button class="btn" id="confirmDownload">Confirm Download</button>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2>Message Sent Successfully!</h2>
+            <p>Thank you for contacting us. We'll get back to you soon.</p>
+            <button class="btn" id="closeSuccess">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Product Data
+        const products = [
+            {
+                name: "Networking Fundamentals Guide",
+                description: "An introductory guide covering the basics of computer networking, protocols, and topologies.",
+                price_kes: "2,500.00",
+                price_usd: "20.00",
+                price_ghc: "230.00",
+                price_ngn: "2,000.00",
+                default_currency: "kes",
+                image_urls: [
+                    "https://ik.imagekit.io/novalabsai/product1a.jpg",
+                    "https://ik.imagekit.io/novalabsai/product1b.jpg"
+                ],
+                site_id: "unicable"
+            },
+            {
+                name: "Advanced Network Security Ebook",
+                description: "Comprehensive guide to network security principles, threats, and protection strategies.",
+                price_kes: "3,000.00",
+                price_usd: "25.00",
+                price_ghc: "280.00",
+                price_ngn: "2,500.00",
+                default_currency: "kes",
+                image_urls: [
+                    "https://ik.imagekit.io/novalabsai/product2a.jpg",
+                    "https://ik.imagekit.io/novalabsai/product2b.jpg"
+                ],
+                site_id: "unicable"
+            },
+            {
+                name: "Wireless Networking Handbook",
+                description: "Complete reference for designing, implementing, and troubleshooting wireless networks.",
+                price_kes: "2,800.00",
+                price_usd: "22.00",
+                price_ghc: "250.00",
+                price_ngn: "2,200.00",
+                default_currency: "kes",
+                image_urls: [
+                    "https://ik.imagekit.io/novalabsai/product3a.jpg",
+                    "https://ik.imagekit.io/novalabsai/product3b.jpg"
+                ],
+                site_id: "unicable"
+            },
+            {
+                name: "Enterprise Networking Toolkit",
+                description: "Essential resources for managing and optimizing large-scale enterprise networks.",
+                price_kes: "3,200.00",
+                price_usd: "26.00",
+                price_ghc: "300.00",
+                price_ngn: "2,700.00",
+                default_currency: "kes",
+                image_urls: [
+                    "https://ik.imagekit.io/novalabsai/product4a.jpg",
+                    "https://ik.imagekit.io/novalabsai/product4b.jpg"
+                ],
+                site_id: "unicable"
+            },
+            {
+                name: "Network Troubleshooting Masterclass",
+                description: "Step-by-step guide to identifying and resolving common network issues effectively.",
+                price_kes: "2,700.00",
+                price_usd: "21.00",
+                price_ghc: "240.00",
+                price_ngn: "2,100.00",
+                default_currency: "kes",
+                image_urls: [
+                    "https://ik.imagekit.io/novalabsai/product5a.jpg",
+                    "https://ik.imagekit.io/novalabsai/product5b.jpg"
+                ],
+                site_id: "unicable"
+            }
+        ];
+
+        // DOM Elements
+        const productsGrid = document.querySelector('.products-grid');
+        const downloadModal = document.getElementById('downloadModal');
+        const successModal = document.getElementById('successModal');
+        const contactForm = document.getElementById('contactForm');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function () {
+            // Render products
+            renderProducts();
+
+            // Initialize scroll animations
+            initScrollAnimations();
+
+            // Set up event listeners
+            setupEventListeners();
+        });
+
+        // Render products to the page
+        function renderProducts() {
+            productsGrid.innerHTML = '';
+
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card fade-in';
+
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <span>${product.name}</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-price">KES ${product.price_kes}</div>
+                        <button class="btn download-btn" data-product="${product.name}">Download Now</button>
+                    </div>
+                `;
+
+                productsGrid.appendChild(productCard);
+            });
+        }
+
+        // Initialize scroll animations
+        function initScrollAnimations() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // Set up event listeners
+        function setupEventListeners() {
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Download buttons
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('download-btn')) {
+                    const productName = e.target.getAttribute('data-product');
+                    openDownloadModal(productName);
+                }
+            });
+
+            // Close modals
+            document.querySelectorAll('.close-modal').forEach(button => {
+                button.addEventListener('click', closeModals);
+            });
+
+            document.getElementById('closeSuccess').addEventListener('click', closeModals);
+
+            // Confirm download
+            document.getElementById('confirmDownload').addEventListener('click', () => {
+                const email = document.getElementById('email-download').value;
+                if (validateEmail(email)) {
+                    alert('Thank you for your purchase! A download link has been sent to your email.');
+                    closeModals();
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+
+            // Contact form submission
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (validateContactForm()) {
+                    // In a real implementation, you would send the form data to a server
+                    successModal.style.display = 'flex';
+                    contactForm.reset();
+                }
+            });
+
+            // Close modals when clicking outside
+            window.addEventListener('click', (e) => {
+                if (e.target === downloadModal) {
+                    closeModals();
+                }
+                if (e.target === successModal) {
+                    closeModals();
+                }
+            });
+        }
+
+        // Open download modal
+        function openDownloadModal(productName) {
+            const modalTitle = downloadModal.querySelector('h2');
+            modalTitle.textContent = `Download ${productName}`;
+            downloadModal.style.display = 'flex';
+        }
+
+        // Close all modals
+        function closeModals() {
+            downloadModal.style.display = 'none';
+            successModal.style.display = 'none';
+        }
+
+        // Validate email
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Validate contact form
+        function validateContactForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                return false;
+            }
+
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

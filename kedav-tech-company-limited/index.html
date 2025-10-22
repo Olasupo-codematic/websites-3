@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEDAV TECH - Empowering Minds with Knowledge</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Icon set for mobile nav toggle -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header/Sticky Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-content">
+                <div class="logo">
+                    <a href="index.html">KEDAV TECH</a>
+                </div>
+                <button class="nav-toggle" id="nav-toggle">☰</button>
+                <div class="nav-links" id="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="#products">Products</a>
+                    <a href="#contact">Contact</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>KEDAV TECH COMPANY LIMITED</h1>
+                <p>Empowering Minds with Knowledge That Builds Futures.</p>
+                <a href="#products" class="btn btn-primary">Explore Our Guides</a>
+            </div>
+        </section>
+
+        <!-- Product Showcase Section -->
+        <section id="products" class="products">
+            <div class="container">
+                <h2>Our Digital Packages & Guides</h2>
+                <div class="product-grid" id="products-grid">
+                    <!-- Products will be dynamically inserted here by script.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <form id="contact-form" class="max-w-xl mx-auto">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-secondary w-full">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>KEDAV TECH COMPANY LIMITED</h4>
+                <p>Digital products and guides for the modern entrepreneur.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:info@kedavtechltd.com">info@kedavtechltd.com</a></p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; <span id="current-year"></span> KEDAV TECH COMPANY LIMITED. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal (Hidden) -->
+    <div class="modal-overlay" id="product-modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Close product details">✕</button>
+            <div class="modal-body">
+                <h2 id="modal-product-name"></h2>
+                <p id="modal-product-description"></p>
+
+                <h3>Pricing</h3>
+                <div class="modal-price-list" id="modal-price-list">
+                    <!-- Dynamic prices will be injected here -->
+                </div>
+
+                <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+                    Clicking 'Buy Now' in a real scenario would initiate the purchase process. This is a demo
+                    placeholder.
+                </p>
+                <a href="#" class="btn btn-primary" style="margin-top: 15px; width: 100%; text-align: center;">Buy
+                    Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom client-side message box -->
+    <div id="form-message-box"></div>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

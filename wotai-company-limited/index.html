@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOTAI COMPANY LIMITED | Inspiring Stories. Expert Guidance.</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Poppins and Lato fonts from Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --color-primary: #1F2937;
+            /* Dark Gray */
+            --color-accent: #FBBF24;
+            /* Gold */
+            --color-background: #F9FAFB;
+            --color-text: #111827;
+        }
+
+        /* Custom Fonts */
+        .font-heading {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scroll-triggered animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero content animation - always visible with entrance animation */
+        .hero-content {
+            opacity: 1;
+            animation: heroFadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes heroFadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stagger animation delays for hero elements */
+        .hero-content:nth-child(1) { animation-delay: 0.2s; }
+        .hero-content:nth-child(2) { animation-delay: 0.4s; }
+        .hero-content:nth-child(3) { animation-delay: 0.6s; }
+        .hero-content:nth-child(4) { animation-delay: 0.8s; }
+        .hero-content:nth-child(5) { animation-delay: 1s; }
+
+        /* Hero section background */
+        #hero {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        /* Card hover effect */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="font-body text-gray-900 bg-gray-50 antialiased" data-view="home">
+
+    <!-- Primary Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#home" class="font-heading text-xl font-bold text-gray-900 flex items-center"
+                    onclick="navigate('home')">
+                    <i class="fas fa-gem text-amber-500 mr-2"></i> WOTAI LTD
+                </a>
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about"
+                        class="text-base font-medium text-gray-600 hover:text-amber-500 transition duration-150 ease-in-out scroll-link">About</a>
+                    <a href="#services"
+                        class="text-base font-medium text-gray-600 hover:text-amber-500 transition duration-150 ease-in-out scroll-link">Services</a>
+                    <a href="#products"
+                        class="text-base font-medium text-gray-600 hover:text-amber-500 transition duration-150 ease-in-out scroll-link">Ebooks</a>
+                    <a href="#contact-section"
+                        class="text-base font-medium text-gray-600 hover:text-amber-500 transition duration-150 ease-in-out scroll-link">Contact</a>
+                </nav>
+                <!-- CTA Button -->
+                <button id="cta-button"
+                    class="hidden md:block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 shadow-md">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container for SPA -->
+    <main id="app-content">
+
+        <!-- 1. HOME VIEW -->
+        <div id="home-view" class="view">
+
+            <!-- Hero Section -->
+            <section id="hero" class="py-20 md:py-32 relative overflow-hidden">
+                <!-- Background Elements -->
+                <div class="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>
+                <div class="absolute top-0 left-0 w-full h-full">
+                    <div class="absolute top-10 left-10 w-20 h-20 bg-amber-400 rounded-full opacity-10 animate-pulse"></div>
+                    <div class="absolute top-32 right-16 w-16 h-16 bg-amber-300 rounded-full opacity-15 animate-bounce"></div>
+                    <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-amber-500 rounded-full opacity-20"></div>
+                    <div class="absolute bottom-32 right-1/3 w-8 h-8 bg-amber-400 rounded-full opacity-25"></div>
+                    <!-- Geometric shapes -->
+                    <div class="absolute top-1/4 right-10 w-24 h-24 border-2 border-amber-400 opacity-20 rotate-45"></div>
+                    <div class="absolute bottom-1/4 left-16 w-32 h-32 border border-amber-300 opacity-15 rotate-12"></div>
+                </div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <div class="max-w-4xl mx-auto">
+                        <!-- Icon accent above title -->
+                        <div class="mb-6 hero-content">
+                            <div class="inline-flex items-center justify-center w-20 h-20 bg-amber-500 rounded-full mb-4">
+                                <i class="fas fa-lightbulb text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        
+                        <h1
+                            class="font-heading text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-4 hero-content">
+                            Inspiring Stories. <span class="text-amber-400">Expert Guidance.</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-gray-300 mb-8 hero-content max-w-3xl mx-auto">
+                            We provide media services, publish books, and offer consultancy to empower individuals and
+                            businesses with compelling narratives and strategic insights.
+                        </p>
+                        
+                        <!-- Key highlights -->
+                        <div class="flex flex-wrap justify-center gap-6 mb-8 hero-content">
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-video text-amber-400 mr-2"></i>
+                                <span class="text-sm font-medium">Media Production</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-book text-amber-400 mr-2"></i>
+                                <span class="text-sm font-medium">Publishing</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-chart-line text-amber-400 mr-2"></i>
+                                <span class="text-sm font-medium">Consultancy</span>
+                            </div>
+                        </div>
+                        
+                        <button id="hero-cta"
+                            class="bg-amber-500 hover:bg-amber-600 text-gray-900 font-heading font-bold py-4 px-10 rounded-lg text-lg transition duration-300 shadow-xl transform hover:scale-105 hero-content inline-flex items-center">
+                            <span>Get Started</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="py-16 md:py-24 bg-white fade-in">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="font-heading text-4xl font-bold text-gray-900 text-center mb-12">Who We Are</h2>
+                    <div class="max-w-3xl mx-auto text-center">
+                        <p class="text-xl text-gray-700 leading-relaxed">
+                            WOTAI COMPANY LIMITED specializes in **media production**, **book authorship and
+                            publishing**, and **strategic consultancy**. Our team combines creativity with industry
+                            expertise to deliver impactful results for our clients. We are committed to fostering
+                            powerful narratives and providing the strategic guidance necessary for success in the modern
+                            digital landscape.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="py-16 md:py-24 bg-gray-50 fade-in">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="font-heading text-4xl font-bold text-gray-900 text-center mb-12">Our Services</h2>
+                    <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Services Cards will be rendered here by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Digital Products Section (Ebooks & Media Guides) -->
+            <section id="products" class="py-16 md:py-24 bg-white fade-in">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="font-heading text-4xl font-bold text-gray-900 text-center mb-12">Ebooks & Media Guides
+                    </h2>
+                    <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                        <!-- Products Cards will be rendered here by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact-section" class="py-16 md:py-24 bg-gray-800 text-white fade-in">
+                <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="font-heading text-4xl font-bold text-center mb-4">Get in Touch</h2>
+                    <p class="text-center text-gray-300 mb-8">Ready to start your next project? Drop us a line.</p>
+
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium">Name</label>
+                            <input type="text" id="name" name="name" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-lg shadow-sm focus:ring-amber-500 focus:border-amber-500 bg-gray-700 text-white"
+                                aria-required="true">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium">Email</label>
+                            <input type="email" id="email" name="email" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-lg shadow-sm focus:ring-amber-500 focus:border-amber-500 bg-gray-700 text-white"
+                                aria-required="true">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-lg shadow-sm focus:ring-amber-500 focus:border-amber-500 bg-gray-700 text-white"
+                                aria-required="true"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-amber-500 hover:bg-amber-600 text-gray-900 font-heading font-bold py-3 rounded-lg transition duration-300 shadow-md">
+                            Send Message
+                        </button>
+                    </form>
+
+                    <div class="mt-8 text-center text-sm text-gray-400">
+                        Or contact us directly at <a href="mailto:Info@wotailimited.com"
+                            class="text-amber-400 hover:underline">Info@wotailimited.com</a>
+                    </div>
+                </div>
+            </section>
+
+        </div> <!-- End of Home View -->
+
+        <!-- 2. TERMS OF SERVICE VIEW -->
+        <div id="terms-view" class="view hidden py-16 md:py-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 bg-white p-8 rounded-xl shadow-lg">
+                <h1 class="font-heading text-4xl font-bold text-gray-900 mb-6">Terms of Service – WOTAI COMPANY LIMITED
+                </h1>
+                <p class="text-gray-500 mb-8">Last Updated: October 2025</p>
+
+                <h3 class="font-heading text-2xl font-semibold text-gray-800 mt-6 mb-3">1. Acceptance of Terms</h3>
+                <p class="text-gray-700 mb-4">By accessing or using the services provided by WOTAI COMPANY LIMITED, you
+                    agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not
+                    agree with any of these terms, you are prohibited from using or accessing our services.</p>
+
+                <h3 class="font-heading text-2xl font-semibold text-gray-800 mt-6 mb-3">2. Service Usage Policy</h3>
+                <p class="text-gray-700 mb-4">Our services, including media production, authorship, and consultancy, are
+                    provided for lawful purposes only. You agree not to misuse the services or engage in any activity
+                    that could harm WOTAI COMPANY LIMITED or its clients.</p>
+
+                <h3 class="font-heading text-2xl font-semibold text-gray-800 mt-6 mb-3">3. Payment and Delivery Terms
+                </h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4 pl-4">
+                    <li>**Consultancy & Services:** Payment schedules will be outlined in a separate Statement of Work
+                        (SOW). All prices are quoted in Kenyan Shillings (KES).</li>
+                    <li>**Ebooks & Digital Products:** Payment is required in full upon checkout. Delivery is instant
+                        via a secure download link provided immediately upon payment confirmation.</li>
+                </ul>
+
+                <h3 class="font-heading text-2xl font-semibold text-gray-800 mt-6 mb-3">4. Intellectual Property Rights
+                </h3>
+                <p class="text-gray-700 mb-4">All content, including ebooks, guides, media, and website materials, is
+                    the exclusive property of WOTAI COMPANY LIMITED or its licensed partners and is protected by
+                    copyright laws. Consultancy reports and bespoke media content created for a client will be governed
+                    by the specific intellectual property transfer agreements signed between the parties.</p>
+
+                <h3 class="font-heading text-2xl font-semibold text-gray-800 mt-6 mb-3">5. Contact Information</h3>
+                <p class="text-gray-700">For any questions regarding these Terms, please contact us at: <a
+                        href="mailto:Info@wotailimited.com"
+                        class="text-amber-600 hover:underline">Info@wotailimited.com</a></p>
+            </div>
+        </div> <!-- End of Terms View -->
+
+        <!-- 3. PRIVACY POLICY VIEW -->
+        <div id="privacy-view" class="view hidden py-16 md:py-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 bg-white p-8 rounded-xl shadow-lg">
+                <h1 class="font-heading text-4xl font-bold text-gray-900 mb-6">Privacy Policy – WOTAI COMPANY LIMITED
+                </h1>
+                <p class="text-gray-500 mb-8">Last Updated: October 2025</p>
+
+                <h3 class="font-heading text-2xl font-semibold text-gray-800 mt-6 mb-3">1. Information Collected</h3>
+                <p class="text-gray-700 mb-4">We collect personal identification information (Name, Email Address) when
+                    you voluntarily submit it to us, such as when filling out our contact form or purchasing a digital
+                    product.</p>
+
+                <h3 class="font-heading text-2xl font-semibold text-gray-800 mt-6 mb-3">2. How Data is Used</h3>
+                <p class="text-gray-700 mb-4">The information we collect is used to:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4 pl-4">
+                    <li>Respond to inquiries and offer support.</li>
+                    <li>Process transactions and deliver purchased products/services.</li>
+                    <li>Improve our website and service offerings.</li>
+                </ul>
+
+                <h3 class="font-heading text-2xl font-semibold text-gray-800 mt-6 mb-3">3. Cookies & Analytics</h3>
+                <p class="text-gray-700 mb-4">We may use cookies and similar tracking technologies to monitor activity
+                    on our service and hold certain information. This data helps us understand user behavior and
+                    optimize our website experience. We respect Do Not Track signals.</p>
+
+                <h3 class="font-heading text-2xl font-semibold text-gray-800 mt-6 mb-3">4. Data Protection Rights</h3>
+                <p class="text-gray-700 mb-4">Depending on your location, you may have rights to access, update, or
+                    request deletion of your personal data. We are committed to protecting your data and responding to
+                    your requests in a timely manner.</p>
+
+                <h3 class="font-heading text-2xl font-semibold text-gray-800 mt-6 mb-3">5. Contact Information</h3>
+                <p class="text-gray-700">If you have any questions about this Privacy Policy, please contact us at: <a
+                        href="mailto:Info@wotailimited.com"
+                        class="text-amber-600 hover:underline">Info@wotailimited.com</a></p>
+            </div>
+        </div> <!-- End of Privacy View -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:flex md:justify-between md:items-center">
+            <p class="text-sm text-gray-400 mb-4 md:mb-0">
+                © 2025 WOTAI COMPANY LIMITED. All rights reserved.
+            </p>
+            <div class="space-x-4">
+                <a href="#terms" class="text-sm text-gray-400 hover:text-amber-500 transition duration-150"
+                    onclick="navigate('terms')">Terms of Service</a>
+                <a href="#privacy" class="text-sm text-gray-400 hover:text-amber-500 transition duration-150"
+                    onclick="navigate('privacy')">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Contact Form (and Product Download Success) -->
+    <div id="main-modal"
+        class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden items-center justify-center z-50 transition-opacity duration-300"
+        role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="bg-white rounded-xl shadow-2xl max-w-lg w-11/12 p-6 md:p-8 transform transition-transform duration-300 scale-95 opacity-0"
+            id="modal-content-wrapper">
+
+            <!-- Contact Form Content (Initial State) -->
+            <div id="modal-form-content">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 id="modal-title" class="font-heading text-2xl font-bold text-gray-900">Get Started with WOTAI
+                    </h2>
+                    <button id="close-modal"
+                        class="text-gray-400 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-full p-1"
+                        aria-label="Close form">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <p class="text-gray-600 mb-6">Fill out the form below to initiate a consultation or ask a question.</p>
+                <form id="modal-contact-form" class="space-y-4">
+                    <div>
+                        <input type="text" id="modal-name" name="name" placeholder="Your Name" required
+                            class="block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500">
+                    </div>
+                    <div>
+                        <input type="email" id="modal-email" name="email" placeholder="Your Email" required
+                            class="block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500">
+                    </div>
+                    <div>
+                        <textarea id="modal-message" name="message" rows="3" placeholder="Your Message" required
+                            class="block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 rounded-lg transition duration-300">
+                        Submit Inquiry
+                    </button>
+                </form>
+            </div>
+
+            <!-- Success/Download Message Content -->
+            <div id="modal-success-content" class="text-center hidden">
+                <i class="fas fa-check-circle text-6xl text-amber-500 mb-4"></i>
+                <h2 class="font-heading text-2xl font-bold text-gray-900 mb-2" id="success-title"></h2>
+                <p class="text-gray-600 mb-6" id="success-message"></p>
+                <button id="close-success-modal"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-lg transition duration-300">
+                    Close
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        // --- Data Definitions ---
+        const servicesData = [
+            { name: "Media Production", description: "High-quality video, podcast, and visual media creation tailored to your brand's voice.", price: "15,000.00" },
+            { name: "Book Authorship & Publishing", description: "End-to-end guidance from concept development to professional publishing and distribution.", price: "12,500.00" },
+            { name: "Consultancy Services", description: "Strategic advice on business growth, operations, and market positioning.", price: "14,000.00" },
+            { name: "Workshops & Training", description: "Hands-on, specialized training for teams in media, writing, and digital skills.", price: "9,800.00" },
+            { name: "Digital Content Strategy", description: "Developing a robust roadmap for content creation, distribution, and audience engagement.", price: "10,500.00" },
+        ];
+
+        const productsData = [
+            { name: "Media Production Handbook", description: "A comprehensive guide to producing high-quality media content for digital platforms and clients.", price: "2,500.00", image: "https://placehold.co/300x400/1F2937/FBBF24?text=Media+Handbook" },
+            { name: "Authorship Guide for Beginners", description: "Learn the fundamentals of writing and getting your first book published with expert tips and workflows.", price: "2,800.00", image: "https://placehold.co/300x400/1F2937/FBBF24?text=Authorship+Guide" },
+            { name: "Content Strategy Toolkit", description: "Essential tools and templates for developing a robust and engaging digital content strategy.", price: "2,200.00", image: "https://placehold.co/300x400/1F2937/FBBF24?text=Strategy+Toolkit" },
+            { name: "Consultancy Playbook", description: "A structured approach to running successful consultancy projects and delivering maximum client value.", price: "2,700.00", image: "https://placehold.co/300x400/1F2937/FBBF24?text=Playbook" },
+            { name: "Digital Branding Guide", description: "Master the art of building a powerful and consistent digital brand across all online channels.", price: "2,900.00", image: "https://placehold.co/300x400/1F2937/FBBF24?text=Branding+Guide" }
+        ];
+
+        const currency = "KES"; // Kenyan Shilling
+
+        // --- DOM Elements ---
+        const mainModal = document.getElementById('main-modal');
+        const modalContentWrapper = document.getElementById('modal-content-wrapper');
+        const modalFormContent = document.getElementById('modal-form-content');
+        const modalSuccessContent = document.getElementById('modal-success-content');
+        const successTitle = document.getElementById('success-title');
+        const successMessage = document.getElementById('success-message');
+        const contactForm = document.getElementById('contact-form');
+        const modalContactForm = document.getElementById('modal-contact-form');
+
+        // --- Functions ---
+
+        /**
+         * Renders the services and products dynamically into the DOM.
+         */
+        function renderContent() {
+            // 1. Render Services
+            const servicesGrid = document.getElementById('services-grid');
+            servicesGrid.innerHTML = servicesData.map(service => `
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-amber-500 card-hover transform transition duration-300 fade-in">
+                    <h3 class="font-heading text-2xl font-semibold text-gray-900 mb-2">${service.name}</h3>
+                    <p class="text-gray-600 mb-4">${service.description}</p>
+                    <p class="font-heading text-xl font-bold text-gray-800">${currency} ${service.price}</p>
+                </div>
+            `).join('');
+
+            // 2. Render Products
+            const productsGrid = document.getElementById('products-grid');
+            productsGrid.innerHTML = productsData.map(product => `
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition duration-300 fade-in flex flex-col">
+                    <img src="${product.image}" alt="${product.name} cover" class="w-full h-48 object-cover object-center" onerror="this.onerror=null;this.src='https://placehold.co/300x400/1F2937/FBBF24?text=Ebook';" loading="lazy">
+                    <div class="p-4 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading text-lg font-semibold text-gray-900 mb-1">${product.name}</h3>
+                            <p class="text-sm text-gray-500 mb-3">${product.description.substring(0, 70)}...</p>
+                        </div>
+                        <div>
+                            <p class="font-heading text-lg font-bold text-gray-800 mb-3">${currency} ${product.price}</p>
+                            <button data-product-name="${product.name}" class="w-full text-sm bg-amber-500 hover:bg-amber-600 text-gray-900 font-medium py-2 rounded-lg transition duration-300 product-download-btn">
+                                Download Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        /**
+         * Opens the main modal.
+         * @param {string} title - Title for the success modal.
+         * @param {string} message - Message for the success modal.
+         * @param {boolean} isSuccess - If true, shows success content; otherwise, shows contact form.
+         */
+        function openModal(title = '', message = '', isSuccess = false) {
+            mainModal.classList.remove('hidden');
+            mainModal.classList.add('flex', 'opacity-0');
+
+            // Wait for display change before applying opacity transition
+            setTimeout(() => {
+                mainModal.classList.remove('opacity-0');
+                modalContentWrapper.classList.remove('opacity-0', 'scale-95');
+                modalContentWrapper.classList.add('opacity-100', 'scale-100');
+
+                if (isSuccess) {
+                    modalFormContent.classList.add('hidden');
+                    modalSuccessContent.classList.remove('hidden');
+                    successTitle.textContent = title;
+                    successMessage.textContent = message;
+                } else {
+                    // Reset form fields
+                    modalContactForm.reset();
+                    modalFormContent.classList.remove('hidden');
+                    modalSuccessContent.classList.add('hidden');
+                }
+
+                // Set focus for accessibility (to the close button or first input)
+                const focusElement = isSuccess ? document.getElementById('close-success-modal') : document.getElementById('modal-name');
+                if (focusElement) focusElement.focus();
+
+            }, 10);
+        }
+
+        /**
+         * Closes the main modal.
+         */
+        function closeModal() {
+            modalContentWrapper.classList.remove('opacity-100', 'scale-100');
+            modalContentWrapper.classList.add('opacity-0', 'scale-95');
+            mainModal.classList.add('opacity-0');
+
+            setTimeout(() => {
+                mainModal.classList.add('hidden');
+                mainModal.classList.remove('flex');
+                // Ensure focus returns to the element that triggered the modal, if possible.
+                document.body.focus();
+            }, 300);
+        }
+
+        /**
+         * Simulates form submission and shows success modal.
+         * @param {Event} e - The form submit event.
+         * @param {boolean} fromModal - Whether the submission came from the modal form.
+         */
+        function handleFormSubmission(e, fromModal) {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+
+            console.log(`Form Submitted: Name=${name}, Email=${email}, Message=${message}`);
+
+            if (fromModal) {
+                closeModal(); // Close the modal before opening the success modal
+                setTimeout(() => {
+                    openModal('Inquiry Sent!', `Thank you, ${name}! We have received your message and will respond to your query at ${email} shortly.`, true);
+                }, 350);
+            } else {
+                // For the main contact section form
+                e.target.reset(); // Clear the form
+                openModal('Message Sent!', `Thank you, ${name}! Your message has been sent successfully. We will be in touch.`, true);
+            }
+        }
+
+        /**
+         * Simple SPA navigation (show/hide views).
+         * @param {string} viewId - The ID of the view to show ('home', 'terms', 'privacy').
+         */
+        function navigate(viewId) {
+            const views = document.querySelectorAll('.view');
+            views.forEach(view => {
+                view.classList.add('hidden');
+            });
+
+            document.getElementById(`${viewId}-view`).classList.remove('hidden');
+            document.body.setAttribute('data-view', viewId);
+            window.scrollTo(0, 0); // Scroll to top on view change
+
+            // Adjust navigation links for Home view
+            if (viewId === 'home') {
+                document.querySelectorAll('.scroll-link').forEach(link => link.classList.remove('hidden'));
+                document.getElementById('cta-button').classList.remove('hidden');
+            } else {
+                // Hide smooth scroll links when on legal pages
+                document.querySelectorAll('.scroll-link').forEach(link => link.classList.add('hidden'));
+                document.getElementById('cta-button').classList.add('hidden');
+            }
+        }
+
+        /**
+         * Smooth Scroll Function for Home view anchor links
+         * @param {Event} e - Click event
+         */
+        function handleSmoothScroll(e) {
+            const targetId = e.target.getAttribute('href').substring(1);
+            if (targetId && document.body.getAttribute('data-view') === 'home') {
+                e.preventDefault();
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else if (document.body.getAttribute('data-view') !== 'home' && targetId === 'home') {
+                e.preventDefault();
+                navigate('home');
+            }
+        }
+
+        // --- Event Listeners and Initializers ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderContent();
+
+            // 1. Modal Triggers
+            document.getElementById('cta-button').addEventListener('click', () => openModal());
+            document.getElementById('hero-cta').addEventListener('click', () => openModal());
+            document.getElementById('close-modal').addEventListener('click', closeModal);
+            document.getElementById('close-success-modal').addEventListener('click', closeModal);
+            mainModal.addEventListener('click', (e) => {
+                if (e.target === mainModal) closeModal();
+            });
+
+            // 2. Form Submissions
+            contactForm.addEventListener('submit', (e) => handleFormSubmission(e, false));
+            modalContactForm.addEventListener('submit', (e) => handleFormSubmission(e, true));
+
+            // 3. Product Download Buttons
+            document.querySelectorAll('.product-download-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const productName = e.target.getAttribute('data-product-name');
+                    openModal('Download Initiated', `Thank you for purchasing the **${productName}**! Your secure download link has been sent to your email.`, true);
+                });
+            });
+
+            // 4. Smooth Scrolling
+            document.querySelectorAll('.scroll-link, a[href^="#"]').forEach(link => {
+                link.addEventListener('click', handleSmoothScroll);
+            });
+
+            // 5. Scroll-Triggered Animations (Intersection Observer)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, {
+                threshold: 0.1, // Trigger when 10% of the item is visible
+                rootMargin: '0px 0px -50px 0px' // Slightly delay trigger for elements near the bottom
+            });
+
+            // Apply fade-in class to all animatable sections/cards
+            document.querySelectorAll('section, .card-hover').forEach(el => {
+                el.classList.add('fade-in');
+                observer.observe(el);
+            });
+
+            // Initialize view based on hash (e.g., #terms) or default to home
+            const hash = window.location.hash.substring(1);
+            if (['terms', 'privacy'].includes(hash)) {
+                navigate(hash);
+            } else {
+                navigate('home');
+            }
+        });
+
+        // Add keyboard accessibility for modal (ESC key)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mainModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // Ensure navigation works on hash change (e.g., browser back/forward)
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.substring(1);
+            if (['terms', 'privacy'].includes(hash)) {
+                navigate(hash);
+            } else if (hash === 'home' || hash === '') {
+                navigate('home');
+            }
+        });
+
+    </script>
+</body>
+
+</html>

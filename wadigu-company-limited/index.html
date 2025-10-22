@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WADIGU COMPANY LIMITED | Words that Work. Content that Converts.</title>
+    <!-- Load Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Define Design System Colors and Font Family */
+        :root {
+            --color-primary: #1F2937;
+            /* Dark Gray */
+            --color-accent: #FBBF24;
+            /* Warm Gold */
+            --color-bg: #F9FAFB;
+            --color-text: #111827;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+        }
+
+        .container {
+            max-width: 1280px;
+        }
+
+        .text-primary {
+            color: var(--color-primary);
+        }
+
+        .bg-primary {
+            background-color: var(--color-primary);
+        }
+
+        .text-accent {
+            color: var(--color-accent);
+        }
+
+        .bg-accent {
+            background-color: var(--color-accent);
+        }
+
+        /* Animation class for fade-in effect */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Button Styling */
+        .btn-accent {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-accent:hover {
+            box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.4), 0 4px 6px -4px rgba(251, 191, 36, 0.4);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-extrabold text-primary tracking-tight">WADIGU <span
+                    class="text-accent">LIMITED</span></a>
+            <div class="flex space-x-4">
+                <a href="#services" class="text-primary hover:text-accent font-medium transition">Services</a>
+                <a href="#resources" class="text-primary hover:text-accent font-medium transition">Resources</a>
+                <a href="#contact" class="text-primary hover:text-accent font-medium transition">Contact</a>
+            </div>
+            <button id="openModalBtn" class="btn-accent text-sm hidden md:block">Get a Quote</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32 bg-primary text-white text-center">
+            <div class="container mx-auto px-4 fade-in-section">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Words that Work. Content that
+                    Converts.</h1>
+                <p class="text-xl md:text-2xl mb-8 font-light text-gray-300">Professional writing services to elevate
+                    your brand and engage your audience.</p>
+                <button id="openModalBtnMobile" class="btn-accent text-lg">Get a Quote</button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 max-w-4xl text-center fade-in-section">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Why Choose WADIGU?</h2>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-accent">
+                    <p class="text-lg leading-relaxed">
+                        WADIGU COMPANY LIMITED specializes in crafting compelling content for websites, blogs, social
+                        media, and marketing campaigns. We help businesses connect with their audience through effective
+                        storytelling and **SEO-focused copy**. Our mission is to deliver content that is not just
+                        well-written, but strategically designed to achieve your business goals.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 fade-in-section">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">Our Content Writing Services
+                </h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div
+                        class="p-6 bg-gray-50 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="text-accent text-3xl mb-3">📄</div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Website Copywriting</h3>
+                        <p class="text-gray-600 mb-4">High-impact landing pages and site copy designed for conversion.
+                        </p>
+                        <p class="text-2xl font-bold text-primary">KES 4,000.00</p>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div
+                        class="p-6 bg-gray-50 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="text-accent text-3xl mb-3">✍️</div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">SEO Blog Writing</h3>
+                        <p class="text-gray-600 mb-4">In-depth, research-backed articles optimized to rank on Google.
+                        </p>
+                        <p class="text-2xl font-bold text-primary">KES 3,500.00</p>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div
+                        class="p-6 bg-gray-50 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="text-accent text-3xl mb-3">📱</div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Social Media Content</h3>
+                        <p class="text-gray-600 mb-4">Engaging captions and short-form copy for all major platforms.</p>
+                        <p class="text-2xl font-bold text-primary">KES 2,500.00</p>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div
+                        class="p-6 bg-gray-50 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="text-accent text-3xl mb-3">📧</div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Email Campaigns</h3>
+                        <p class="text-gray-600 mb-4">Sequences and newsletters that drive opens, clicks, and sales.</p>
+                        <p class="text-2xl font-bold text-primary">KES 4,500.00</p>
+                    </div>
+
+                    <!-- Service Card 5 -->
+                    <div
+                        class="p-6 bg-gray-50 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="text-accent text-3xl mb-3">📚</div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Ebook & Guides Writing</h3>
+                        <p class="text-gray-600 mb-4">Long-form lead magnets and authoritative content assets.</p>
+                        <p class="text-2xl font-bold text-primary">KES 6,000.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Products Section -->
+        <section id="resources" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 fade-in-section">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">Content Writing Guides &
+                    Resources</h2>
+
+                <div id="product-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Products will be dynamically inserted here by script.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-primary text-white">
+            <div class="container mx-auto px-4 max-w-2xl fade-in-section">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Get in Touch</h2>
+                <form id="contactForm" class="space-y-6 bg-gray-800 p-8 rounded-xl shadow-2xl">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                        <input type="text" id="name" name="name" required
+                            class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-accent focus:border-accent text-white">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-accent focus:border-accent text-white">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                            class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-accent focus:border-accent text-white"></textarea>
+                    </div>
+                    <button type="submit" class="btn-accent w-full mt-4">Send Message</button>
+                    <div id="form-message" class="text-center mt-4 font-medium" style="display:none;"></div>
+                </form>
+                <p class="text-center mt-6 text-gray-400">
+                    <span class="font-medium text-accent">Email:</span> <a href="mailto:cs@wadigulimited.com"
+                        class="hover:text-white transition">cs@wadigulimited.com</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for "Get a Quote" -->
+    <div id="quoteModal"
+        class="fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4 transition-opacity duration-300 hidden"
+        aria-modal="true" role="dialog">
+        <div
+            class="bg-white rounded-xl shadow-2xl w-full max-w-lg p-6 md:p-8 transform transition-transform duration-300 scale-95">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-primary">Get Your Custom Quote</h3>
+                <button id="closeModalBtn"
+                    class="text-gray-500 hover:text-primary transition text-3xl leading-none">&times;</button>
+            </div>
+            <p class="mb-4 text-gray-600">Tell us about your project and we'll get back to you with a free,
+                no-obligation estimate.</p>
+
+            <!-- Reusing the contact form structure -->
+            <form id="quoteForm" class="space-y-4">
+                <div>
+                    <label for="modal-name" class="block text-sm font-medium text-primary mb-1">Name</label>
+                    <input type="text" id="modal-name" name="name" required
+                        class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-300 focus:ring-accent focus:border-accent text-primary">
+                </div>
+                <div>
+                    <label for="modal-email" class="block text-sm font-medium text-primary mb-1">Email</label>
+                    <input type="email" id="modal-email" name="email" required
+                        class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-300 focus:ring-accent focus:border-accent text-primary">
+                </div>
+                <div>
+                    <label for="modal-message" class="block text-sm font-medium text-primary mb-1">Project
+                        Details</label>
+                    <textarea id="modal-message" name="message" rows="4" required
+                        class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-300 focus:ring-accent focus:border-accent text-primary"
+                        placeholder="e.g., I need 5 SEO blog posts per month..."></textarea>
+                </div>
+                <button type="submit" class="btn-accent w-full">Submit Quote Request</button>
+                <div id="modal-form-message" class="text-center mt-3 font-medium text-primary" style="display:none;">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-primary py-8 text-gray-300">
+        <div
+            class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <p class="mb-4 md:mb-0">&copy; 2025 WADIGU COMPANY LIMITED. All rights reserved.</p>
+            <div class="space-x-4">
+                <a href="terms.html" class="hover:text-accent transition">Terms of Service</a>
+                <a href="privacy.html" class="hover:text-accent transition">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // --- 1. Product Data (KES) ---
+        const products = [
+            {
+                "name": "SEO Content Strategy Guide",
+                "description": "A practical guide to planning and executing SEO-driven content for websites and blogs.",
+                "price_kes": "1,800.00",
+                "price_usd": "15.00",
+                "price_ghc": "220.00",
+                "price_ngn": "1,500.00",
+                "image_url": "https://placehold.co/300x200/FBBF24/1F2937?text=SEO+Guide" // Placeholder image
+            },
+            {
+                "name": "Blog Writing Masterclass",
+                "description": "Master the art of high-quality, long-form content creation from planning to promotion.",
+                "price_kes": "2,000.00",
+                "price_usd": "17.00",
+                "price_ghc": "250.00",
+                "price_ngn": "1,700.00",
+                "image_url": "https://placehold.co/300x200/FBBF24/1F2937?text=Masterclass"
+            },
+            {
+                "name": "Social Media Content Templates",
+                "description": "Ready-to-use templates for consistent, high-engagement posting across platforms.",
+                "price_kes": "1,500.00",
+                "price_usd": "12.00",
+                "price_ghc": "180.00",
+                "price_ngn": "1,200.00",
+                "image_url": "https://placehold.co/300x200/FBBF24/1F2937?text=Templates"
+            },
+            {
+                "name": "Email Marketing Copy Handbook",
+                "description": "Proven formulas and psychological triggers for effective email marketing campaigns.",
+                "price_kes": "2,200.00",
+                "price_usd": "19.00",
+                "price_ghc": "280.00",
+                "price_ngn": "1,900.00",
+                "image_url": "https://placehold.co/300x200/FBBF24/1F2937?text=Handbook"
+            },
+            {
+                "name": "Ebook Writing Toolkit",
+                "description": "Everything you need to plan, write, and format professional, polished ebooks and whitepapers.",
+                "price_kes": "2,500.00",
+                "price_usd": "22.00",
+                "price_ghc": "320.00",
+                "price_ngn": "2,100.00",
+                "image_url": "https://placehold.co/300x200/FBBF24/1F2937?text=Ebook+Kit"
+            }
+        ];
+
+        // --- 2. Dynamic Product Rendering ---
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            if (!grid) return;
+
+            grid.innerHTML = products.map(product => `
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl transition duration-300">
+                    <img src="${product.image_url}" alt="${product.name} cover" class="w-full h-32 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/300x200/FBBF24/1F2937?text=Digital+Product'">
+                    <div class="p-5">
+                        <h4 class="text-xl font-semibold text-primary mb-2">${product.name}</h4>
+                        <p class="text-sm text-gray-600 mb-4">${product.description}</p>
+                        <p class="text-xl font-bold text-primary mb-4">KES ${product.price_kes}</p>
+                        <button class="btn-accent w-full text-sm">Download Now</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+        document.addEventListener('DOMContentLoaded', renderProducts);
+
+
+        // --- 3. Modal Popup for "Get a Quote" ---
+        const modal = document.getElementById('quoteModal');
+        const openBtns = [document.getElementById('openModalBtn'), document.getElementById('openModalBtnMobile')];
+        const closeBtn = document.getElementById('closeModalBtn');
+        const quoteForm = document.getElementById('quoteForm');
+        const modalMessage = document.getElementById('modal-form-message');
+
+        openBtns.forEach(btn => {
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    modal.classList.remove('hidden');
+                    setTimeout(() => modal.style.opacity = '1', 10);
+                });
+            }
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.opacity = '0';
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeBtn.click();
+            }
+        });
+
+        // --- 4. Form Validation & Submission Handling ---
+        function handleFormSubmission(event, messageElement) {
+            event.preventDefault();
+
+            const form = event.target;
+            const name = form.querySelector('[name="name"]').value.trim();
+            const email = form.querySelector('[name="email"]').value.trim();
+            const message = form.querySelector('[name="message"]').value.trim();
+
+            if (!name || !email || !message) {
+                messageElement.style.color = '#EF4444'; // Red-500
+                messageElement.textContent = 'Please fill out all fields.';
+                messageElement.style.display = 'block';
+                return;
+            }
+
+            // Simple email format check
+            if (!/^\S+@\S+\.\S+$/.test(email)) {
+                messageElement.style.color = '#EF4444';
+                messageElement.textContent = 'Please enter a valid email address.';
+                messageElement.style.display = 'block';
+                return;
+            }
+
+            // Simulate form submission success
+            console.log("Form Data Submitted:", { name, email, message });
+            messageElement.style.color = '#10B981'; // Green-500
+            messageElement.textContent = 'Message sent successfully! We will be in touch shortly.';
+            messageElement.style.display = 'block';
+
+            // Reset form and potentially close modal after delay
+            form.reset();
+            if (form.id === 'quoteForm') {
+                setTimeout(() => closeBtn.click(), 3000);
+            }
+        }
+
+        // Attach event listeners to both forms
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            handleFormSubmission(e, document.getElementById('form-message'));
+        });
+
+        quoteForm.addEventListener('submit', (e) => {
+            handleFormSubmission(e, modalMessage);
+        });
+
+
+        // --- 5. Smooth Scrolling for Navigation ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // --- 6. Fade-in Animations (IntersectionObserver) ---
+        const faders = document.querySelectorAll(".fade-in-section");
+
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -100px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+                entry.target.classList.add("is-visible");
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+</body>
+
+</html>

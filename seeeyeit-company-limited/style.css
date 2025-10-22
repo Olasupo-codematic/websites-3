@@ -1,0 +1,508 @@
+/* ----------------------------------------------------------------
+   Global Stylesheet for SEEEYEIT COMPANY LIMITED
+   Font: Inter, Poppins | Palette: Primary (#1a73e8), Secondary (#111827), Accent (#facc15)
+---------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@500;700&display=swap');
+
+:root {
+    --color-primary: #1a73e8;
+    /* Vibrant Blue */
+    --color-secondary: #111827;
+    /* Deep Black */
+    --color-accent: #facc15;
+    /* Warm Yellow */
+    --color-background: #f9fafb;
+    /* Soft Light Grey */
+    --color-text-dark: #1f2937;
+    --color-text-light: #ffffff;
+    --border-radius-lg: 0.75rem;
+    --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background);
+}
+
+/* ----------------------------------------------------------------
+   Typography and Headings
+---------------------------------------------------------------- */
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-secondary);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2.75rem;
+    }
+}
+
+/* ----------------------------------------------------------------
+   Utility and Buttons
+---------------------------------------------------------------- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: #165ab8;
+    box-shadow: 0 6px 20px rgba(26, 115, 232, 0.6);
+}
+
+.btn-secondary {
+    background-color: var(--color-accent);
+    color: var(--color-text-dark);
+    box-shadow: var(--shadow-subtle);
+}
+
+.btn-secondary:hover {
+    background-color: #eab308;
+    box-shadow: 0 4px 10px rgba(250, 204, 21, 0.5);
+}
+
+/* ----------------------------------------------------------------
+   Header and Navigation
+---------------------------------------------------------------- */
+header {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-subtle);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    padding: 0.25rem 0.5rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+/* ----------------------------------------------------------------
+   Hero Section
+---------------------------------------------------------------- */
+#hero {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    padding: 6rem 0;
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin: 1.5rem 0 2.5rem;
+    opacity: 0.85;
+}
+
+/* ----------------------------------------------------------------
+   Product Catalog
+---------------------------------------------------------------- */
+#products {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+#product-catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.product-card {
+    background-color: var(--color-text-light);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-subtle);
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    /* Used for JS animation */
+    transform: translateY(20px);
+    /* Used for JS animation */
+    will-change: transform, opacity;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: 1rem;
+    background-color: #e5e7eb;
+}
+
+.product-icon {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #165ab8 100%);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: 1rem;
+    font-size: 8rem;
+}
+
+.product-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.product-card p {
+    color: #6b7280;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.price-tag {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+/* ----------------------------------------------------------------
+   Contact Section
+---------------------------------------------------------------- */
+#contact {
+    padding: 4rem 0;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-subtle);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* ----------------------------------------------------------------
+   Footer and Policy Pages (Shared Layout)
+---------------------------------------------------------------- */
+footer {
+    background-color: var(--color-secondary);
+    color: #9ca3af;
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 4px solid var(--color-primary);
+}
+
+.footer-links a {
+    color: var(--color-accent);
+    text-decoration: none;
+    margin: 0 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-text-light);
+}
+
+.policy-content {
+    padding: 4rem 0;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 70vh;
+}
+
+.policy-content h2 {
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 0.5rem;
+}
+
+.policy-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.policy-content p,
+.policy-content ul {
+    margin-bottom: 1rem;
+}
+
+/* ----------------------------------------------------------------
+   Modal (Product Details Popup)
+---------------------------------------------------------------- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 24, 39, 0.95);
+    /* Semi-transparent secondary color */
+    display: none;
+    /* Controlled by JS */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.open {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--color-text-light);
+    border-radius: var(--border-radius-lg);
+    max-width: 90%;
+    width: 700px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.modal.open .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-secondary);
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--color-primary);
+}
+
+.modal-body {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.modal-image {
+    flex: 0 0 40%;
+}
+
+.modal-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+    background-color: #e5e7eb;
+}
+
+.modal-icon {
+    flex: 0 0 40%;
+}
+
+.large-icon {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #165ab8 100%);
+    border-radius: var(--border-radius-lg);
+    font-size: 12rem;
+}
+
+.modal-details {
+    flex: 1;
+}
+
+.modal-details h3 {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.modal-details .description {
+    margin-top: 1rem;
+    color: #4b5563;
+}
+
+.modal-price-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1rem;
+}
+
+.modal-price-list li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.currency-label {
+    color: var(--color-secondary);
+    width: 60px;
+    display: inline-block;
+}
+
+.default-currency {
+    color: var(--color-primary);
+    font-weight: 800;
+}
+
+/* Responsive adjustments for Modal */
+@media (max-width: 768px) {
+    .modal-body {
+        flex-direction: column;
+    }
+
+    .modal-image,
+    .modal-icon {
+        flex: 0 0 100%;
+    }
+
+    .modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .large-icon {
+        height: 200px;
+        font-size: 8rem;
+    }
+}
+
+/* ----------------------------------------------------------------
+   Animation Classes (Fade-in/Slide-in)
+---------------------------------------------------------------- */
+
+.animate-show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 0.8s ease-out;
+}
