@@ -90,7 +90,7 @@
                 <a href="#resources" class="text-primary hover:text-accent font-medium transition">Resources</a>
                 <a href="#contact" class="text-primary hover:text-accent font-medium transition">Contact</a>
             </div>
-            <button id="openModalBtn" class="btn-accent text-sm hidden md:block">Get a Quote</button>
+            <button id="shopProductsBtn" class="btn-accent text-sm hidden md:block">Shop Products</button>
         </nav>
     </header>
 
@@ -102,7 +102,7 @@
                     Converts.</h1>
                 <p class="text-xl md:text-2xl mb-8 font-light text-gray-300">Professional writing services to elevate
                     your brand and engage your audience.</p>
-                <button id="openModalBtnMobile" class="btn-accent text-lg">Get a Quote</button>
+                <button id="shopProductsBtnMobile" class="btn-accent text-lg">Shop Products</button>
             </div>
         </section>
 
@@ -135,26 +135,22 @@
                         <h3 class="text-xl font-semibold text-primary mb-2">Website Copywriting</h3>
                         <p class="text-gray-600 mb-4">High-impact landing pages and site copy designed for conversion.
                         </p>
-                        <p class="text-2xl font-bold text-primary">KES 4,000.00</p>
                     </div>
-
-                    <!-- Service Card 2 -->
+           
                     <div
                         class="p-6 bg-gray-50 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
                         <div class="text-accent text-3xl mb-3">✍️</div>
                         <h3 class="text-xl font-semibold text-primary mb-2">SEO Blog Writing</h3>
                         <p class="text-gray-600 mb-4">In-depth, research-backed articles optimized to rank on Google.
                         </p>
-                        <p class="text-2xl font-bold text-primary">KES 3,500.00</p>
                     </div>
 
-                    <!-- Service Card 3 -->
+                
                     <div
                         class="p-6 bg-gray-50 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
                         <div class="text-accent text-3xl mb-3">📱</div>
                         <h3 class="text-xl font-semibold text-primary mb-2">Social Media Content</h3>
                         <p class="text-gray-600 mb-4">Engaging captions and short-form copy for all major platforms.</p>
-                        <p class="text-2xl font-bold text-primary">KES 2,500.00</p>
                     </div>
 
                     <!-- Service Card 4 -->
@@ -163,7 +159,6 @@
                         <div class="text-accent text-3xl mb-3">📧</div>
                         <h3 class="text-xl font-semibold text-primary mb-2">Email Campaigns</h3>
                         <p class="text-gray-600 mb-4">Sequences and newsletters that drive opens, clicks, and sales.</p>
-                        <p class="text-2xl font-bold text-primary">KES 4,500.00</p>
                     </div>
 
                     <!-- Service Card 5 -->
@@ -172,7 +167,6 @@
                         <div class="text-accent text-3xl mb-3">📚</div>
                         <h3 class="text-xl font-semibold text-primary mb-2">Ebook & Guides Writing</h3>
                         <p class="text-gray-600 mb-4">Long-form lead magnets and authoritative content assets.</p>
-                        <p class="text-2xl font-bold text-primary">KES 6,000.00</p>
                     </div>
                 </div>
             </div>
@@ -221,47 +215,6 @@
         </section>
     </main>
 
-    <!-- Modal for "Get a Quote" -->
-    <div id="quoteModal"
-        class="fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4 transition-opacity duration-300 hidden"
-        aria-modal="true" role="dialog">
-        <div
-            class="bg-white rounded-xl shadow-2xl w-full max-w-lg p-6 md:p-8 transform transition-transform duration-300 scale-95">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold text-primary">Get Your Custom Quote</h3>
-                <button id="closeModalBtn"
-                    class="text-gray-500 hover:text-primary transition text-3xl leading-none">&times;</button>
-            </div>
-            <p class="mb-4 text-gray-600">Tell us about your project and we'll get back to you with a free,
-                no-obligation estimate.</p>
-
-            <!-- Reusing the contact form structure -->
-            <form id="quoteForm" class="space-y-4">
-                <div>
-                    <label for="modal-name" class="block text-sm font-medium text-primary mb-1">Name</label>
-                    <input type="text" id="modal-name" name="name" required
-                        class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-300 focus:ring-accent focus:border-accent text-primary">
-                </div>
-                <div>
-                    <label for="modal-email" class="block text-sm font-medium text-primary mb-1">Email</label>
-                    <input type="email" id="modal-email" name="email" required
-                        class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-300 focus:ring-accent focus:border-accent text-primary">
-                </div>
-                <div>
-                    <label for="modal-message" class="block text-sm font-medium text-primary mb-1">Project
-                        Details</label>
-                    <textarea id="modal-message" name="message" rows="4" required
-                        class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-300 focus:ring-accent focus:border-accent text-primary"
-                        placeholder="e.g., I need 5 SEO blog posts per month..."></textarea>
-                </div>
-                <button type="submit" class="btn-accent w-full">Submit Quote Request</button>
-                <div id="modal-form-message" class="text-center mt-3 font-medium text-primary" style="display:none;">
-                </div>
-            </form>
-        </div>
-    </div>
-
-
     <!-- Footer -->
     <footer class="bg-primary py-8 text-gray-300">
         <div
@@ -285,7 +238,7 @@
                 "price_usd": "15.00",
                 "price_ghc": "220.00",
                 "price_ngn": "1,500.00",
-                "image_url": "https://placehold.co/300x200/FBBF24/1F2937?text=SEO+Guide" // Placeholder image
+                "icon": "🔍"
             },
             {
                 "name": "Blog Writing Masterclass",
@@ -294,7 +247,7 @@
                 "price_usd": "17.00",
                 "price_ghc": "250.00",
                 "price_ngn": "1,700.00",
-                "image_url": "https://placehold.co/300x200/FBBF24/1F2937?text=Masterclass"
+                "icon": "✍️"
             },
             {
                 "name": "Social Media Content Templates",
@@ -303,7 +256,7 @@
                 "price_usd": "12.00",
                 "price_ghc": "180.00",
                 "price_ngn": "1,200.00",
-                "image_url": "https://placehold.co/300x200/FBBF24/1F2937?text=Templates"
+                "icon": "📱"
             },
             {
                 "name": "Email Marketing Copy Handbook",
@@ -312,7 +265,7 @@
                 "price_usd": "19.00",
                 "price_ghc": "280.00",
                 "price_ngn": "1,900.00",
-                "image_url": "https://placehold.co/300x200/FBBF24/1F2937?text=Handbook"
+                "icon": "📧"
             },
             {
                 "name": "Ebook Writing Toolkit",
@@ -321,7 +274,7 @@
                 "price_usd": "22.00",
                 "price_ghc": "320.00",
                 "price_ngn": "2,100.00",
-                "image_url": "https://placehold.co/300x200/FBBF24/1F2937?text=Ebook+Kit"
+                "icon": "📚"
             }
         ];
 
@@ -332,12 +285,14 @@
 
             grid.innerHTML = products.map(product => `
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl transition duration-300">
-                    <img src="${product.image_url}" alt="${product.name} cover" class="w-full h-32 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/300x200/FBBF24/1F2937?text=Digital+Product'">
+                    <div class="w-full h-32 bg-gradient-to-br from-yellow-200 to-yellow-400 flex items-center justify-center">
+                        <div class="text-6xl">${product.icon}</div>
+                    </div>
                     <div class="p-5">
                         <h4 class="text-xl font-semibold text-primary mb-2">${product.name}</h4>
                         <p class="text-sm text-gray-600 mb-4">${product.description}</p>
                         <p class="text-xl font-bold text-primary mb-4">KES ${product.price_kes}</p>
-                        <button class="btn-accent w-full text-sm">Download Now</button>
+                        <a href="mailto:cs@wadigulimited.com?subject=Purchase Request: ${product.name}&body=Hello, I would like to purchase ${product.name} for KES ${product.price_kes}. Please send me the payment details and delivery information." class="btn-accent w-full text-sm inline-block text-center">Buy Now</a>
                     </div>
                 </div>
             `).join('');
@@ -345,31 +300,16 @@
         document.addEventListener('DOMContentLoaded', renderProducts);
 
 
-        // --- 3. Modal Popup for "Get a Quote" ---
-        const modal = document.getElementById('quoteModal');
-        const openBtns = [document.getElementById('openModalBtn'), document.getElementById('openModalBtnMobile')];
-        const closeBtn = document.getElementById('closeModalBtn');
-        const quoteForm = document.getElementById('quoteForm');
-        const modalMessage = document.getElementById('modal-form-message');
+        // --- 3. Shop Products Button Functionality ---
+        const shopBtns = [document.getElementById('shopProductsBtn'), document.getElementById('shopProductsBtnMobile')];
 
-        openBtns.forEach(btn => {
+        shopBtns.forEach(btn => {
             if (btn) {
                 btn.addEventListener('click', () => {
-                    modal.classList.remove('hidden');
-                    setTimeout(() => modal.style.opacity = '1', 10);
+                    document.getElementById('resources').scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
-            }
-        });
-
-        closeBtn.addEventListener('click', () => {
-            modal.style.opacity = '0';
-            setTimeout(() => modal.classList.add('hidden'), 300);
-        });
-
-        // Close modal when clicking outside
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeBtn.click();
             }
         });
 
@@ -410,13 +350,9 @@
             }
         }
 
-        // Attach event listeners to both forms
+        // Attach event listener to contact form
         document.getElementById('contactForm').addEventListener('submit', (e) => {
             handleFormSubmission(e, document.getElementById('form-message'));
-        });
-
-        quoteForm.addEventListener('submit', (e) => {
-            handleFormSubmission(e, modalMessage);
         });
 
 

@@ -382,7 +382,6 @@
                 <a href="#services" class="scroll-link">Services</a>
                 <a href="#products" class="scroll-link">Products</a>
                 <a href="#contact" class="scroll-link">Contact</a>
-                <button class="btn btn-accent" id="openModalBtn">Request Consultation</button>
             </nav>
             <!-- A minimal mobile menu button can be added here if needed -->
         </div>
@@ -394,7 +393,6 @@
             <div class="container fade-in" style="--delay: 0.2s;">
                 <h1>Expert Guidance. Strategic Solutions.</h1>
                 <p>Delivering actionable advice and consulting services to help your business thrive.</p>
-                <button class="btn btn-accent" id="openModalHero">Request Consultation</button>
             </div>
         </section>
 
@@ -508,37 +506,6 @@
         </div>
     </footer>
 
-    <!-- Consultation Modal -->
-    <div id="consultationModal" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" id="closeModalBtn">&times;</button>
-            <h2 style="margin-bottom: 1.5rem;">Request a Consultation</h2>
-            <p style="margin-bottom: 1rem;">Fill out the details below and we'll reach out to schedule your strategic
-                session.</p>
-            <form id="modalForm">
-                <label for="modalName">Name</label>
-                <input type="text" id="modalName" name="name" required>
-
-                <label for="modalEmail">Email</label>
-                <input type="email" id="modalEmail" name="email" required>
-
-                <label for="modalService">Service of Interest</label>
-                <select id="modalService" required
-                    style="width: 100%; padding: 0.75rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 8px; font-family: 'Poppins', sans-serif;">
-                    <option value="">-- Select a Service --</option>
-                    <option value="Strategy">Business Strategy Consulting</option>
-                    <option value="Financial">Financial Advisory</option>
-                    <option value="Operational">Operational Efficiency Audits</option>
-                    <option value="Market">Market Research & Analysis</option>
-                    <option value="Coaching">Executive Coaching</option>
-                </select>
-
-                <button type="submit" class="btn btn-accent" style="width: 100%;">Submit Request</button>
-            </form>
-            <p id="modalFormMessage" style="color: green; text-align: center; margin-top: 1rem;"></p>
-        </div>
-    </div>
-
     <!-- JavaScript for Functionality -->
     <script>
         // Data for Digital Products
@@ -552,7 +519,6 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             renderProducts();
-            setupModals();
             setupForms();
             setupSmoothScrolling();
             setupScrollAnimations();
@@ -575,52 +541,13 @@
                         <p style="font-size:0.95rem; margin-top:0.5rem; color:#6b7280;">${product.description}</p>
                     </div>
                     <p class="price">KES ${product.price}</p>
-                    <button class="btn btn-primary">Download Now</button>
+                    <button class="btn btn-primary">Buy Now</button>
                 `;
                 grid.appendChild(card);
             });
         }
 
-        // 2. Modal Popup Logic
-        function setupModals() {
-            const modal = document.getElementById('consultationModal');
-            const openBtns = document.querySelectorAll('#openModalBtn, #openModalHero');
-            const closeBtn = document.getElementById('closeModalBtn');
-            const modalForm = document.getElementById('modalForm');
-            const modalMessage = document.getElementById('modalFormMessage');
-
-            const openModal = () => {
-                modal.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            };
-
-            const closeModal = () => {
-                modal.classList.remove('open');
-                document.body.style.overflow = '';
-                modalMessage.textContent = '';
-                modalForm.reset();
-            };
-
-            openBtns.forEach(btn => btn.addEventListener('click', openModal));
-            closeBtn.addEventListener('click', closeModal);
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
-
-            modalForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // Basic form validation (already handled by 'required' attribute, but a final check)
-                if (modalForm.checkValidity()) {
-                    // Simulate form submission success
-                    modalMessage.textContent = 'Request submitted successfully! We will contact you soon.';
-                    setTimeout(closeModal, 3000); // Close after 3 seconds
-                }
-            });
-        }
-
-        // 3. Contact Form Logic
+        // 2. Contact Form Logic
         function setupForms() {
             const contactForm = document.getElementById('contactForm');
             const formMessage = document.getElementById('formMessage');
@@ -641,7 +568,7 @@
             });
         }
 
-        // 4. Smooth Scrolling for Navigation
+        // 3. Smooth Scrolling for Navigation
         function setupSmoothScrolling() {
             document.querySelectorAll('.scroll-link').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -653,7 +580,7 @@
             });
         }
 
-        // 5. Scroll-Triggered Animations (Intersection Observer)
+        // 4. Scroll-Triggered Animations (Intersection Observer)
         function setupScrollAnimations() {
             const targets = document.querySelectorAll('.fade-in');
 

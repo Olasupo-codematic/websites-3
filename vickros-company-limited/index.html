@@ -68,9 +68,16 @@
         .hero {
             background: linear-gradient(135deg, #004AAD 0%, #0066CC 100%);
             color: white;
-            padding: 150px 2rem 100px;
+            padding: 150px 0 100px;
             text-align: center;
             margin-top: 60px;
+            width: 100%;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .hero h1 {
@@ -89,24 +96,7 @@
             animation: fadeInUp 0.8s 0.2s forwards;
         }
 
-        .cta-btn {
-            background: #00BFA6;
-            color: white;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            opacity: 0;
-            animation: fadeInUp 0.8s 0.4s forwards;
-        }
 
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 191, 166, 0.3);
-        }
 
         /* Section Styles */
         section {
@@ -358,40 +348,7 @@
             text-decoration: underline;
         }
 
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            animation: fadeIn 0.3s;
-        }
 
-        .modal-content {
-            background: white;
-            margin: 5% auto;
-            padding: 3rem;
-            border-radius: 15px;
-            max-width: 600px;
-            animation: slideDown 0.3s;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            line-height: 1;
-        }
-
-        .close:hover {
-            color: #000;
-        }
 
         /* Animations */
         @keyframes fadeInUp {
@@ -416,17 +373,7 @@
             }
         }
 
-        @keyframes slideDown {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
 
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
 
         .fade-in {
             opacity: 0;
@@ -472,10 +419,11 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h1>Empowering Businesses Through Technology</h1>
-        <p>We deliver trusted IT consulting, custom software solutions, and advanced cybersecurity services tailored for
-            modern enterprises.</p>
-        <button class="cta-btn" onclick="openModal()">Request Consultation</button>
+        <div class="hero-container">
+            <h1>Empowering Businesses Through Technology</h1>
+            <p>We deliver trusted IT consulting, custom software solutions, and advanced cybersecurity services tailored for
+                modern enterprises.</p>
+        </div>
     </section>
 
     <!-- About Section -->
@@ -541,31 +489,31 @@
                 <h3>Cybersecurity for Businesses</h3>
                 <p>A practical guide to protecting small and medium businesses from modern cyber threats.</p>
                 <div class="product-price">KES 2,500</div>
-                <button class="download-btn">Download Now</button>
+                <button class="download-btn">Buy Now</button>
             </div>
             <div class="product-card">
                 <h3>Cloud Deployment Handbook</h3>
                 <p>Comprehensive guide to deploying and managing cloud infrastructure effectively.</p>
                 <div class="product-price">KES 3,000</div>
-                <button class="download-btn">Download Now</button>
+                <button class="download-btn">Buy Now</button>
             </div>
             <div class="product-card">
                 <h3>Network Infrastructure Blueprint</h3>
                 <p>Step-by-step guide to designing and implementing robust network architectures.</p>
                 <div class="product-price">KES 2,800</div>
-                <button class="download-btn">Download Now</button>
+                <button class="download-btn">Buy Now</button>
             </div>
             <div class="product-card">
                 <h3>Software Development Lifecycle Guide</h3>
                 <p>Master the complete software development process from planning to deployment.</p>
                 <div class="product-price">KES 3,200</div>
-                <button class="download-btn">Download Now</button>
+                <button class="download-btn">Buy Now</button>
             </div>
             <div class="product-card">
                 <h3>Data Protection & Privacy Guide</h3>
                 <p>Essential compliance guide for protecting customer data and maintaining privacy standards.</p>
                 <div class="product-price">KES 2,700</div>
-                <button class="download-btn">Download Now</button>
+                <button class="download-btn">Buy Now</button>
             </div>
         </div>
     </section>
@@ -603,28 +551,7 @@
         <p>&copy; 2025 VICKROS COMPANY LIMITED. All rights reserved.</p>
     </footer>
 
-    <!-- Modal -->
-    <div id="consultModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 style="color: #004AAD; margin-bottom: 2rem;">Request Consultation</h2>
-            <form onsubmit="handleConsultation(event)">
-                <div class="form-group">
-                    <label for="modal-name">Name</label>
-                    <input type="text" id="modal-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="modal-email">Email</label>
-                    <input type="email" id="modal-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="modal-message">Tell us about your project</label>
-                    <textarea id="modal-message" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Submit Request</button>
-            </form>
-        </div>
-    </div>
+
 
     <script>
         // Smooth scrolling
@@ -638,21 +565,7 @@
             });
         });
 
-        // Modal functions
-        function openModal() {
-            document.getElementById('consultModal').style.display = 'block';
-        }
 
-        function closeModal() {
-            document.getElementById('consultModal').style.display = 'none';
-        }
-
-        window.onclick = function (event) {
-            const modal = document.getElementById('consultModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
 
         // Form handlers
         function handleSubmit(event) {
@@ -665,12 +578,7 @@
             event.target.reset();
         }
 
-        function handleConsultation(event) {
-            event.preventDefault();
-            alert('Thank you for requesting a consultation! We will contact you within 24 hours.');
-            closeModal();
-            event.target.reset();
-        }
+
 
         // Scroll animations
         const observerOptions = {
@@ -698,6 +606,26 @@
         function showPrivacy() {
             window.location.href = 'privacy.html';
         }
+
+        // Handle Buy Now buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const buyButtons = document.querySelectorAll('.download-btn');
+            buyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productCard = this.closest('.product-card');
+                    const productName = productCard.querySelector('h3').textContent;
+                    const productPrice = productCard.querySelector('.product-price').textContent;
+                    
+                    // Create mailto link for purchase inquiry
+                    const subject = encodeURIComponent(`Purchase Inquiry: ${productName}`);
+                    const body = encodeURIComponent(`Hello,\n\nI would like to purchase the following product:\n\nProduct: ${productName}\nPrice: ${productPrice}\n\nPlease provide me with the payment details and download instructions.\n\nThank you!`);
+                    const mailtoLink = `mailto:Customerservice@vickroslimited.com?subject=${subject}&body=${body}`;
+                    
+                    // Open email client
+                    window.location.href = mailtoLink;
+                });
+            });
+        });
 
         // Email validation
         document.querySelectorAll('input[type="email"]').forEach(input => {

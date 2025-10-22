@@ -113,7 +113,7 @@
                 <!-- CTA Button -->
                 <button id="cta-button"
                     class="hidden md:block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 shadow-md">
-                    Get Started
+                    <i class="fas fa-rocket"></i>
                 </button>
             </div>
         </div>
@@ -174,9 +174,8 @@
                         </div>
                         
                         <button id="hero-cta"
-                            class="bg-amber-500 hover:bg-amber-600 text-gray-900 font-heading font-bold py-4 px-10 rounded-lg text-lg transition duration-300 shadow-xl transform hover:scale-105 hero-content inline-flex items-center">
-                            <span>Get Started</span>
-                            <i class="fas fa-arrow-right ml-2"></i>
+                            class="bg-amber-500 hover:bg-amber-600 text-gray-900 font-heading font-bold py-4 px-10 rounded-lg text-lg transition duration-300 shadow-xl transform hover:scale-105 hero-content inline-flex items-center justify-center">
+                            <i class="fas fa-rocket text-2xl"></i>
                         </button>
                     </div>
                 </div>
@@ -246,7 +245,7 @@
                         </div>
                         <button type="submit"
                             class="w-full bg-amber-500 hover:bg-amber-600 text-gray-900 font-heading font-bold py-3 rounded-lg transition duration-300 shadow-md">
-                            Send Message
+                            <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
 
@@ -387,7 +386,7 @@
                     </div>
                     <button type="submit"
                         class="w-full bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 rounded-lg transition duration-300">
-                        Submit Inquiry
+                        <i class="fas fa-envelope"></i>
                     </button>
                 </form>
             </div>
@@ -399,7 +398,7 @@
                 <p class="text-gray-600 mb-6" id="success-message"></p>
                 <button id="close-success-modal"
                     class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-lg transition duration-300">
-                    Close
+                    <i class="fas fa-times"></i>
                 </button>
             </div>
 
@@ -418,11 +417,11 @@
         ];
 
         const productsData = [
-            { name: "Media Production Handbook", description: "A comprehensive guide to producing high-quality media content for digital platforms and clients.", price: "2,500.00", image: "https://placehold.co/300x400/1F2937/FBBF24?text=Media+Handbook" },
-            { name: "Authorship Guide for Beginners", description: "Learn the fundamentals of writing and getting your first book published with expert tips and workflows.", price: "2,800.00", image: "https://placehold.co/300x400/1F2937/FBBF24?text=Authorship+Guide" },
-            { name: "Content Strategy Toolkit", description: "Essential tools and templates for developing a robust and engaging digital content strategy.", price: "2,200.00", image: "https://placehold.co/300x400/1F2937/FBBF24?text=Strategy+Toolkit" },
-            { name: "Consultancy Playbook", description: "A structured approach to running successful consultancy projects and delivering maximum client value.", price: "2,700.00", image: "https://placehold.co/300x400/1F2937/FBBF24?text=Playbook" },
-            { name: "Digital Branding Guide", description: "Master the art of building a powerful and consistent digital brand across all online channels.", price: "2,900.00", image: "https://placehold.co/300x400/1F2937/FBBF24?text=Branding+Guide" }
+            { name: "Media Production Handbook", description: "A comprehensive guide to producing high-quality media content for digital platforms and clients.", price: "2,500.00", icon: "fas fa-video" },
+            { name: "Authorship Guide for Beginners", description: "Learn the fundamentals of writing and getting your first book published with expert tips and workflows.", price: "2,800.00", icon: "fas fa-pen-fancy" },
+            { name: "Content Strategy Toolkit", description: "Essential tools and templates for developing a robust and engaging digital content strategy.", price: "2,200.00", icon: "fas fa-chart-line" },
+            { name: "Consultancy Playbook", description: "A structured approach to running successful consultancy projects and delivering maximum client value.", price: "2,700.00", icon: "fas fa-handshake" },
+            { name: "Digital Branding Guide", description: "Master the art of building a powerful and consistent digital brand across all online channels.", price: "2,900.00", icon: "fas fa-palette" }
         ];
 
         const currency = "KES"; // Kenyan Shilling
@@ -457,7 +456,9 @@
             const productsGrid = document.getElementById('products-grid');
             productsGrid.innerHTML = productsData.map(product => `
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition duration-300 fade-in flex flex-col">
-                    <img src="${product.image}" alt="${product.name} cover" class="w-full h-48 object-cover object-center" onerror="this.onerror=null;this.src='https://placehold.co/300x400/1F2937/FBBF24?text=Ebook';" loading="lazy">
+                    <div class="w-full h-48 bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
+                        <i class="${product.icon} text-6xl text-white"></i>
+                    </div>
                     <div class="p-4 flex-grow flex flex-col justify-between">
                         <div>
                             <h3 class="font-heading text-lg font-semibold text-gray-900 mb-1">${product.name}</h3>
@@ -466,7 +467,7 @@
                         <div>
                             <p class="font-heading text-lg font-bold text-gray-800 mb-3">${currency} ${product.price}</p>
                             <button data-product-name="${product.name}" class="w-full text-sm bg-amber-500 hover:bg-amber-600 text-gray-900 font-medium py-2 rounded-lg transition duration-300 product-download-btn">
-                                Download Now
+                               Buy now
                             </button>
                         </div>
                     </div>
