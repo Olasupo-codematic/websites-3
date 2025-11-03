@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEEEYEIT COMPANY LIMITED - Digital Empowerment & E-Books</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://placehold.co/32x32/1a73e8/ffffff?text=SE">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">SEEEYEIT</a>
+                </div>
+                <div class="nav-links">
+                    <!-- Internal links for smooth scroll on homepage -->
+                    <a href="#hero" class="active">Home</a>
+                    <a href="#products">Products</a>
+                    <a href="#contact">Contact</a>
+                    <!-- External links to policy pages -->
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero">
+            <div class="container hero-content">
+                <h1>Unlock Your Digital Potential.</h1>
+                <p>We empower entrepreneurs and learners with expert E-commerce and E-Book packages designed for
+                    tangible results in the modern digital economy. Innovation starts here.</p>
+                <a href="#products" class="btn btn-primary">Shop Now</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </section>
+
+        <!-- 2. Products Section (Catalog loaded by script.js) -->
+        <section id="products" class="container">
+            <h2>Our Digital Products</h2>
+            <p style="max-width: 600px; margin: 1rem auto 3rem; color: #4b5563;">Browse our curated collection of
+                essential eBooks and comprehensive kits built to accelerate your success in digital commerce and online
+                publishing.</p>
+            <div id="product-catalog">
+                <!-- Product cards will be inserted here by script.js -->
+            </div>
+        </section>
+
+        <!-- 3. Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 style="text-align: center;">Ready to Connect?</h2>
+                <div class="contact-form">
+                    <p style="text-align: center; margin-bottom: 2rem; color: #4b5563;">Send us a message directly.
+                        We're here to help you get started on your journey.</p>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </p>
+            <p style="margin-top: 1rem;">Email: <a href="mailto:Info@seeeyeitcomp.com"
+                    style="color: var(--color-accent); text-decoration: none;">Info@seeeyeitcomp.com</a></p>
+            <p style="margin-top: 0.5rem;">&copy; 2025 SEEEYEIT COMPANY LIMITED | All Rights Reserved. Currency: ZK
+                Default.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Structure (Hidden by default) -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body" id="modal-details">
+                <!-- Product details populated by script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Link -->
+    <script src="script.js"></script>
+    <script src="navigate.js"></script>
+</body>
+
+</html>
